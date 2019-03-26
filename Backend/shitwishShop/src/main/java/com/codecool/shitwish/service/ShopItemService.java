@@ -22,11 +22,4 @@ public class ShopItemService {
     public List<ShopItem> getAllShopItem() {
         return shopItemRepository.findAll();
     }
-
-    public void getShopItem() throws JsonEOFException {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("User-Agent", "Mozzila/5.0");
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-        HttpEntity<String> entity = new HttpEntity<>(headers);
-    }
 }
