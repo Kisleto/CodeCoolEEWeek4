@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -20,11 +21,10 @@ public class ShopItem {
     @GeneratedValue
     private long id;
 
-    private long userId;
-
+    @NotNull(message = "Product name is required.")
     private String name;
 
-    private String category;
+    private String category; //needed?
 
     private String imgURL;
 
