@@ -23,14 +23,14 @@ class Item extends Component {
 
 
     render() {
-        this.state.items.forEach(item => {
+
             return (
             <div>
-                <div>{item.name}</div>
+                <div>{this.state.items.map((item, i) => <p className="name" key={i}>{item.name}</p> )}</div>
+                <div>{this.state.items.map((item, i) => <p className="price" key={i}>{item.price}</p> )}</div>
 
             </div>
             )
-        })
 
     }
 
