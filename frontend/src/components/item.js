@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "./css/item.css"
+import img from "./img/placeholder.jpg"
 
 
 class Item extends Component {
@@ -19,19 +20,17 @@ class Item extends Component {
                     <div className="row">
                         <div className="block span3">
                             <div className="product">
-                                <img src={"http://placehold.it/295x190/333333/FFFFFF"}/>
+                                <img src={img}/>
                                     <div className="buttons">
                                         <a className="buy btn btn-large btn-info" href="#">
-                                            <i className="icon-shopping-cart">Shopping Cart</i> Add to Cart</a>
+                                            Add to Cart</a>
                                         <a className="preview btn btn-large btn-info" href="#">
                                         View item</a>
                                     </div>
                             </div>
                             <div className="info">
                                 <h4>{this.props.name}</h4>
-                                <span className="description">
-
-        </span>
+                                <span className="description"></span>
                                 <span className="price">{this.props.price}</span>
                                 <a className="btn btn-info pull-right" href="#">Buy Now</a>
                             </div>

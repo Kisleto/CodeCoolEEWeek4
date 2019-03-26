@@ -11,7 +11,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="contain">
                 <div>
                     <h1 className="title"> ShitWish </h1>
                 </div>
