@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping(path ="/products", headers = "Accept=application/json")
 public class ShopItemController {
 
     @Autowired
     ShopItemService shopItemService;
 
-    @GetMapping(path ="/all", produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping
     public Iterable<ShopItem> getAllShopItem() {
         return shopItemService.getAllShopItem();
     }
