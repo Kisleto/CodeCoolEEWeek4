@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import "./css/item.css"
 
 
@@ -7,10 +6,7 @@ class Item extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            name: "",
-            price: 0,
-        }
+        this.state = {}
     }
 
 

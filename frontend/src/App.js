@@ -4,7 +4,6 @@ import Header from "./components/header";
 import Item from "./components/item"
 import axios from 'axios';
 import Grid from 'material-grid/dist/Grid/Grid';
-import Cell from 'material-grid/dist/Grid/Cell';
 
 
 class App extends Component {
@@ -14,7 +13,7 @@ class App extends Component {
 
 
     componentDidMount() {
-        let shitWishAPIUrl = `http://localhost:8091/products/all`;
+        let shitWishAPIUrl = `http://localhost:8091/products`;
         axios.get(shitWishAPIUrl)
             .then(res => {
                 const items = res.data;
