@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './css/header.css'
+import ShoppingCart from './shopping-cart'
 
 class Header extends Component {
 
@@ -15,6 +16,7 @@ class Header extends Component {
                 <div>
                     <h1 className="title"> ShitWish </h1>
                 </div>
+                <ShoppingCart/>
             </div>
         )
     }
