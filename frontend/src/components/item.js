@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import "./css/item.css"
-import img from "./img/placeholder.jpg"
-
 
 class Item extends Component {
 
@@ -20,7 +18,7 @@ class Item extends Component {
                     <div className="row">
                         <div className="block span3">
                             <div className="product">
-                                <img src={img}/>
+                                <img src={this.props.imgURL}/>
                                     <div className="buttons">
                                         <a className="buy btn btn-large btn-info" href="#">
                                             Add to Cart</a>
