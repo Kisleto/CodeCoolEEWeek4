@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
-@Controller
+@RestController
 @RequestMapping(path ="/cart")
 public class OrderProductController {
 
@@ -19,10 +21,15 @@ public class OrderProductController {
     @Autowired
     OrderRepository orderRepository;
 
+    @GetMapping
+    public List<OrderProduct> getAll(){
+        return orderRepository.findAll();
+    }
+
     @PostMapping
     public void addToCart(@RequestParam("name") String name,
                                   @RequestParam("price") double price,
-                                  @RequestParam("ImgURL") String imgUrl){
+                                  @RequestParam("imgURL") String imgUrl){
         OrderProduct orderProduct = new OrderProduct(name, price, imgUrl);
         orderRepository.save(orderProduct);
     }
