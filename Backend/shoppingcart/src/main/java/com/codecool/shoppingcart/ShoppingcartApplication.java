@@ -36,8 +36,8 @@ public class ShoppingcartApplication {
                     .quantity(1)
                     .build();
 
-            orderRepository.save(orderProduct1);
-            orderRepository.save(orderProduct2);
+            //orderRepository.save(orderProduct1);
+            //orderRepository.save(orderProduct2);
 
         };
     }
