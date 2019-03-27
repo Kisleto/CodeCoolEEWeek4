@@ -17,11 +17,15 @@ class Item extends Component {
     }
 
     handleClick() {
-        let shoppingCartURL = `http://localhost:60001/add`;
-        axios.post(shoppingCartURL, {
-            name: this.props.name,
-            price: this.props.price,
-            imgURL: this.props.imgURL
+        let shoppingCartURL = `http://localhost:60001/cart`;
+        axios({
+            method: 'post',
+            url: shoppingCartURL,
+            data: {
+                name: this.props.name,
+                price: this.props.price,
+                imgURL: this.props.imgURL
+            }
         })
             .then(function (response) {
                 console.log(response)
