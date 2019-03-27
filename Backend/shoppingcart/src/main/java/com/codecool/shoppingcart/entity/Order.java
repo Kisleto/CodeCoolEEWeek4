@@ -31,8 +31,7 @@ public class Order {
 
     // private String status;
 
-    @Valid
-    private List<OrderProduct> orderProducts = new ArrayList<>();
+
 
 
 }

@@ -42,11 +42,8 @@ public class ShoppingcartApplication {
             orderProductsList.add(orderProduct1);
             orderProductsList.add(orderProduct2);
 
-            Order order = Order.builder()
-                    .orderProducts(orderProductsList)
-                    .build();
 
-            orderRepository.save(order);
+
 
         };
     }
