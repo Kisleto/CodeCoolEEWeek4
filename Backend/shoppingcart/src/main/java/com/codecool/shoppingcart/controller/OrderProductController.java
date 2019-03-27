@@ -27,11 +27,9 @@ public class OrderProductController {
     }
 
     @PostMapping
-    public void addToCart(@RequestParam("name") String name,
-                                  @RequestParam("price") double price,
-                                  @RequestParam("imgURL") String imgUrl){
-        OrderProduct orderProduct = new OrderProduct(name, price, imgUrl);
-        orderRepository.save(orderProduct);
+    public void addToCart(@RequestBody String payload){
+        System.out.println(payload);
+
     }
 
 }
