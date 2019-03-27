@@ -32,5 +32,11 @@ public class OrderProductController {
 
     }
 
+    @PutMapping("/{id}")
+    public void changeQuantity(@PathVariable("id") Long iD, @RequestBody String payload){
+        
+        System.out.println(payload);
+    }
+
 }
 

@@ -27,7 +27,7 @@ public class ShoppingcartApplication {
             OrderProduct orderProduct1 = OrderProduct.builder()
                     .name("Chrome Cast")
                     .price(200)
-                    .quantity(2)
+                    .quantity(1)
                     .build();
 
             OrderProduct orderProduct2 = OrderProduct.builder()
