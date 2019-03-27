@@ -34,7 +34,7 @@ class Item extends Component {
                 console.log(error)
 
             })
-
+        this.setState({imgURL: ""})
     }
 
 

@@ -4,6 +4,8 @@ import Header from "./components/header";
 import Item from "./components/item"
 import axios from 'axios';
 import Grid from 'material-grid/dist/Grid/Grid';
+import ShoppingCart from "./components/shopping-cart";
+import {BrowserRouter} from "react-router-dom";
 
 
 class App extends Component {
@@ -27,15 +29,27 @@ class App extends Component {
 
 
     render() {
-    return (
-     <div>
-         <Header/>
-         <Grid>
-             {this.state.items.map((item)=><Item name={item.name} price={item.price} imgURL={item.imgURL}/>)}
-         </Grid>
-
-     </div>
-    );
+        if (window.location.href === "http://localhost:3000/shoppingCart") {
+            return (
+                <BrowserRouter>
+                    <div>
+                        <Header which="shoppingCart"/>
+                        <ShoppingCart/>
+                    </div>
+                </BrowserRouter>
+            )
+        } else {
+            return (
+                <BrowserRouter>
+                    <div>
+                        <Header/>
+                        <Grid>
+                            {this.state.items.map((item) => <Item name={item.name} price={item.price}
+                                                                  imgURL={item.imgURL}/>)}
+                        </Grid>
+                    </div>
+                </BrowserRouter>);
+        }
   }
 }
 

@@ -7,7 +7,8 @@ class ShoppingCart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: []
+            items: [],
+            shop: ""
         }
     }
 
@@ -19,6 +20,10 @@ class ShoppingCart extends Component {
                 this.setState({items});
 
             })
+    }
+
+    onClick() {
+        this.setState({shop: "re"})
     }
 
     render() {
