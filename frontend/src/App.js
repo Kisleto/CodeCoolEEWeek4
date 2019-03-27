@@ -31,7 +31,7 @@ class App extends Component {
      <div>
          <Header/>
          <Grid>
-             {this.state.items.map((item)=><Item name={item.name} price={item.price}/>)}
+             {this.state.items.map((item)=><Item name={item.name} price={item.price} imgURL={item.imgURL}/>)}
          </Grid>
 
      </div>
