@@ -8,7 +8,10 @@ import Grid from 'material-grid/dist/Grid/Grid';
 
 class App extends Component {
     state = {
-      items : []
+        items: [],
+        name: "",
+        price: 0,
+        imgURL: "",
     };
 
 
