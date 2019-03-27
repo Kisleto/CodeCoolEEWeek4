@@ -42,7 +42,7 @@ class Item extends Component {
                     <div className="row">
                         <div className="block span3">
                             <div className="product">
-                                <img src="https://via.placeholder.com/100"/>
+                                <img src={this.props.imgURL}/>
                                     <div className="buttons">
                                         <a className="buy btn btn-large btn-info" href="#">
                                             Add to Cart</a>
