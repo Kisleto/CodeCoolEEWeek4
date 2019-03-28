@@ -5,3 +5,11 @@
     color: white;
     font-size: 30px;
 }
+
+.title {
+    font-size: 80px;
+}
+
+.bg-light {
+    background-color: #1abc9c !important;
+}

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import "./css/item.css"
 import axios from 'axios';
 
-
 class Item extends Component {
 
     constructor(props) {
@@ -57,9 +56,8 @@ class Item extends Component {
                             </div>
                             <div className="info">
                                 <h4>{this.props.name}</h4>
-                                <span className="description"></span>
-                                <span className="price">{this.props.price}</span>
-                                <a className="btn btn-info pull-right" href="#" onClick={this.handleClick}>Buy Now</a>
+                                <span className="description">{this.props.desc}</span>
+                                <span className="price">{this.props.price} $</span>
                             </div>
                         </div>
                     </div>
