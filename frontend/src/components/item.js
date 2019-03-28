@@ -46,7 +46,7 @@ class Item extends Component {
                     <div className="row">
                         <div className="block span3">
                             <div className="product">
-                                <img src={this.props.imgURL}/>
+                                <img src={this.props.imgURL} width={411} height={236} mode='fit'/>
                                     <div className="buttons">
                                         <a className="buy btn btn-large btn-info" href="#">
                                             Add to Cart</a>
