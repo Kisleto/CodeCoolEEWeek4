@@ -21,25 +21,5 @@ public class ShoppingcartApplication {
     }
 
 
-    @Bean
-    public CommandLineRunner init() {
-        return args -> {
-            OrderProduct orderProduct1 = OrderProduct.builder()
-                    .name("Chrome Cast")
-                    .price(200)
-                    .quantity(1)
-                    .build();
-
-            OrderProduct orderProduct2 = OrderProduct.builder()
-                    .name("Television")
-                    .price(400)
-                    .quantity(1)
-                    .build();
-
-            //orderRepository.save(orderProduct1);
-            //orderRepository.save(orderProduct2);
-
-        };
-    }
 
 }

@@ -17,10 +17,11 @@ import javax.persistence.Id;
 @Builder
 public class OrderProduct {
 
-    public OrderProduct(String name, double price, String url) {
+    public OrderProduct(String name, double price, String url, Integer quantity) {
         this.name = name;
         this.price = price;
         this.url = url;
+        this.quantity = quantity;
     }
 
     @Id

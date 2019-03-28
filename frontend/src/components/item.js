@@ -24,7 +24,8 @@ class Item extends Component {
             data: {
                 name: this.props.name,
                 price: this.props.price,
-                imgURL: this.props.imgURL
+                imgURL: this.props.imgURL,
+                quantity: this.props.quantity
             }
         })
             .then(function (response) {

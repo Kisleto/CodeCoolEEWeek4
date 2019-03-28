@@ -34,8 +34,8 @@ public class OrderProductController {
         String name = root.path("name").asText();
         double price = root.path("price").asDouble();
         String url = root.path("imgURL").asText();
-
-        OrderProduct orderProduct = new OrderProduct(name, price, url);
+        Integer quantity = 1;
+        OrderProduct orderProduct = new OrderProduct(name, price, url, quantity);
         orderRepository.save(orderProduct);
     }
 
