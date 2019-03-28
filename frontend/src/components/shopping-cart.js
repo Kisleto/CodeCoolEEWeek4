@@ -41,7 +41,7 @@ class ShoppingCart extends Component {
                                 <img className="card-img-top" src={item.url}/>
                                 <Button className="minus" variant={"primary"}> - </Button>
                                 <div className="card-body">
-                                    <p className="card-text">{item.price}</p>
+                                    <p className="card-text">{item.price} $</p>
                                 </div>
                                 <p className="card-text">{item.name}</p>
                                 <Button variant={"primary"} className="plus"> + </Button>
