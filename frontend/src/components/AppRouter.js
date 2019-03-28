@@ -2,6 +2,7 @@ import React from "react";
 import App from "../App";
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import ShoppingCart from "./shopping-cart"
+import "./css/header.css"
 
 
 function AppRouter() {

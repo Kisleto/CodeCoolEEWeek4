@@ -42,13 +42,15 @@ class Item extends Component {
 
             return (
             <div>
+
                 <div className="containers">
                     <div className="row">
                         <div className="block span3">
                             <div className="product">
                                 <img src={this.props.imgURL}/>
                                     <div className="buttons">
-                                        <a className="buy btn btn-large btn-info cart" href="#">
+                                        <a className="buy btn btn-large btn-info cart" onClick={this.handleClick}
+                                           href="#">
                                             Add to Cart</a>
                                     </div>
                             </div>

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from "axios";
 import {Button} from "react-bootstrap"
 import "./css/shoppingcart.css"
+import Grid from 'material-grid/dist/Grid/Grid';
+
 
 class ShoppingCart extends Component {
 
@@ -30,17 +32,24 @@ class ShoppingCart extends Component {
     render() {
         if (this.state.items !== null) {
             return (
-                <div className="wrapper">
-                    {this.state.items.map(item => <div className="item">
-                            <div className="centered">
+                <div>
+                    <Grid>
+                        {this.state.items.map(item =>
+                            <div className="card">
+
+
+                                <img className="card-img-top" src={item.url}/>
                                 <Button className="minus" variant={"primary"}> - </Button>
-                        <p>{item.name}</p>
-                                <img src={item.url}/>
-                        <p>{item.price}</p>
-                                <Button variant={"primary"} className="plus"> + </Button></div>
-                        </div>
+                                <div className="card-body">
+                                    <p className="card-text">{item.price}</p>
+                                </div>
+                                <p className="card-text">{item.name}</p>
+                                <Button variant={"primary"} className="plus"> + </Button>
+                            </div>
                     )
                     }
+                    </Grid>
+
                 </div>
             )
         } else {
