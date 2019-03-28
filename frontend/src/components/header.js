@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './css/header.css'
-import {BrowserRouter as Router, Link} from "react-router-dom";
 
 
 class Header extends Component {
@@ -28,14 +27,9 @@ class Header extends Component {
         return (
             <div className="contain">
                 <div>
+                    <div className="cart">
+                    </div>
                     <h1 className="title"> ShitWish </h1>
-                </div>
-                <div className="cart">
-                    <Router>
-                        <li>
-                            <Link to={this.state.where}> {this.state.which}</Link>
-                        </li>
-                    </Router>
                 </div>
 
             </div>

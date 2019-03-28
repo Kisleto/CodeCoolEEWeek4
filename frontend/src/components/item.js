@@ -48,7 +48,7 @@ class Item extends Component {
                             <div className="product">
                                 <img src={this.props.imgURL}/>
                                     <div className="buttons">
-                                        <a className="buy btn btn-large btn-info" href="#">
+                                        <a className="buy btn btn-large btn-info cart" href="#">
                                             Add to Cart</a>
                                     </div>
                             </div>

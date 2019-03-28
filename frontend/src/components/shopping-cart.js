@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from "axios";
 import {Button} from "react-bootstrap"
+import "./css/shoppingcart.css"
 
 class ShoppingCart extends Component {
 
@@ -29,13 +30,16 @@ class ShoppingCart extends Component {
     render() {
         if (this.state.items !== null) {
             return (
-                <div>
-                    {this.state.items.map(item => <div className="item"><Button variant={"primary"}> - </Button>
+                <div className="wrapper">
+                    {this.state.items.map(item => <div className="item">
+                            <div className="centered">
+                                <Button className="minus" variant={"primary"}> - </Button>
                         <p>{item.name}</p>
-                        <p>{item.imgURL}</p>
+                                <img src={item.url}/>
                         <p>{item.price}</p>
-                        <Button variant={"primary"}> - </Button></div>)
-
+                                <Button variant={"primary"} className="plus"> + </Button></div>
+                        </div>
+                    )
                     }
                 </div>
             )

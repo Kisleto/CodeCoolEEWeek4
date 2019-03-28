@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
-import Header from "./components/header";
 import Item from "./components/item"
 import axios from 'axios';
 import Grid from 'material-grid/dist/Grid/Grid';
-import ShoppingCart from "./components/shopping-cart";
 import {BrowserRouter} from "react-router-dom";
 
 
@@ -29,20 +27,10 @@ class App extends Component {
 
 
     render() {
-        if (window.location.href === "http://localhost:3000/shoppingCart") {
-            return (
+
+        return (
                 <BrowserRouter>
                     <div>
-                        <Header which="shoppingCart"/>
-                        <ShoppingCart/>
-                    </div>
-                </BrowserRouter>
-            )
-        } else {
-            return (
-                <BrowserRouter>
-                    <div>
-                        <Header/>
                         <Grid>
                             {this.state.items.map((item) => <Item name={item.name} price={item.price}
                                                                   imgURL={item.imgURL}/>)}
@@ -51,6 +39,6 @@ class App extends Component {
                 </BrowserRouter>);
         }
   }
-}
+
 
 export default App;
