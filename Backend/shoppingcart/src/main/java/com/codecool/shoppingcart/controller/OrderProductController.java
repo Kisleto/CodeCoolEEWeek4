@@ -39,5 +39,14 @@ public class OrderProductController {
         orderRepository.save(orderProduct);
     }
 
+    @DeleteMapping
+    public void deleteFromCar(@RequestBody String payload) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode root = objectMapper.readTree(payload);
+        Long id = root.path("id").asLong();
+        orderRepository.deleteById(id);
+    }
+    
+
 }
 

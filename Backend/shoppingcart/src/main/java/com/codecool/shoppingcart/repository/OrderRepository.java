@@ -4,4 +4,7 @@ import com.codecool.shoppingcart.entity.OrderProduct;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderRepository extends JpaRepository<OrderProduct, Long> {
+
+    @Override
+    void deleteById(Long aLong);
 }
