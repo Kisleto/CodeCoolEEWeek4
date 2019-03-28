@@ -14,7 +14,6 @@ class ShoppingCart extends Component {
             quantity: 1
         };
 
-        //this.incrementQuantity = this.incrementQuantity.bind(this)
     }
 
     componentDidMount() {
@@ -33,7 +32,7 @@ class ShoppingCart extends Component {
         return (
             <div>
                 <Grid>
-                    {this.state.items.map((item) => <CartItem name={item.name} price={item.price}
+                    {this.state.items.map((item) => <CartItem id={item.id} name={item.name} price={item.price}
                                                               imgURL={item.url} quantity={item.quantity}/>)}
                 </Grid>
             </div>

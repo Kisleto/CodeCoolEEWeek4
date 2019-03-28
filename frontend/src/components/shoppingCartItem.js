@@ -1,6 +1,8 @@
 import {Button} from "react-bootstrap";
 import React, {Component} from "react";
 import "./css/shoppingcart.css"
+import axios from 'axios';
+
 
 class shoppingCartItem extends Component {
     state = {
@@ -10,6 +12,22 @@ class shoppingCartItem extends Component {
 
     componentDidMount() {
         this.setState({quantity: this.props.quantity})
+    }
+
+    handleDeleteClick() {
+        const data = {'data': this.props.id};
+        const header = {
+            'CORS': 'Access-Control-Allow-Origin: *'
+        };
+        let deleteURL = `localhost:60001/cart`;
+        axios.delete(deleteURL, {header, data}
+        ).then(function (response) {
+            console.log(response)
+        })
+            .catch(function (error) {
+                console.log(error)
+
+            })
     }
 
     increaseQuantity() {
@@ -33,6 +51,8 @@ class shoppingCartItem extends Component {
                     <p className="card-text"> {this.state.quantity}</p>
                 </div>
                 <p className="card-text">{this.props.name}</p>
+                <Button variant={"danger"} className="delete"
+                        onClick={this.handleDeleteClick.bind(this)}> Remove</Button>
                 <Button variant={"primary"} className="plus" onClick={this.increaseQuantity.bind(this)}> + </Button>
             </div>
         )
