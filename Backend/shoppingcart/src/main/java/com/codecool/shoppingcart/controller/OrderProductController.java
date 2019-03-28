@@ -6,7 +6,11 @@ import com.codecool.shoppingcart.service.OrderProductService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,7 +27,7 @@ public class OrderProductController {
     OrderRepository orderRepository;
 
     @GetMapping
-    public List<OrderProduct> getAll(){
+    public List<OrderProduct> getAll() {
         return orderRepository.findAll();
     }
 
@@ -43,16 +47,27 @@ public class OrderProductController {
     public void deleteFromCar(@RequestBody String payload) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode root = objectMapper.readTree(payload);
-        Long id = root.path("id").asLong();
+        Long id = root.path("data").asLong();
         orderRepository.deleteById(id);
     }
 
 
     @PutMapping("/{id}")
-    public void changeQuantity(@PathVariable("id") Long iD, @RequestBody String payload){
+    public void changeQuantity(@PathVariable("id") Long iD, @RequestBody String payload) {
 
         System.out.println(payload);
     }
 
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/cart").allowedOrigins("*").allowedMethods("GET", "POST", "PUT", "DELETE");
+
+
+            }
+        };
+    }
 }
 

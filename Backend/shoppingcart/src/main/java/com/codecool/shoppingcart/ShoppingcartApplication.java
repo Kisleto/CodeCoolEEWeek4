@@ -21,5 +21,12 @@ public class ShoppingcartApplication {
     }
 
 
+    @Bean
+    public CommandLineRunner init() {
+        return args -> {
+            OrderProduct orderProduct = OrderProduct.builder().id(2L).name("asd").price(20).build();
+            orderRepository.save(orderProduct);
 
+        };
+    }
 }
